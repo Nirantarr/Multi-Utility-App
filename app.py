@@ -11,17 +11,17 @@ def home():
 @app.route('/image_to_pdf')
 def image_to_pdf():
     subprocess.call(["python", "scripts/image_to_pdf.py"])
-    return "Image to PDF conversion complete!"
+    return "IMAGE TO PDF CONVERSION COMPLETED..!"
 
-@app.route('/slideshare_to_pdf')
-def slideshare_to_pdf():
-    subprocess.call(["python", "scripts/slideshare_to_pdf.py"])
-    return "Slideshare to PDF conversion complete!"
+@app.route('/image_compressor')
+def image_compressor():
+    subprocess.call(["python", "scripts/Image_compressor.py"])
+    return "IMAGE COMPRESSION COMPLETED..!"
 
 @app.route('/text_to_speech')
 def text_to_speech():
     subprocess.call(["python", "scripts/text_to_speech.py"])
-    return "Text to Speech conversion complete!"
+    return "TEXT TO SPEECH CONVERSION COMPLETED..!"
 
 @app.route('/web_scraping')
 def web_scraping():
