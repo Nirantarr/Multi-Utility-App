@@ -4,13 +4,14 @@ import scripts.webscrap_book as webscrap_book  # Import the updated webscraping 
 
 app = Flask(__name__)
 
+# decorator used which URL should trigger a specific function.
 @app.route('/')
 def home():
     return render_template('index.html')
 
 @app.route('/image_to_pdf')
 def image_to_pdf():
-    subprocess.call(["python", "scripts/image_to_pdf.py"])
+    subprocess.call(["python", "scripts/image_to_pdf.py"])  #This runs any type of scripts in background
     return "IMAGE TO PDF CONVERSION COMPLETED..!"
 
 @app.route('/image_compressor')

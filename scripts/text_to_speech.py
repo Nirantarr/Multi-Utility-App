@@ -10,6 +10,7 @@ class GUI:
 
         # Set up text-to-speech engine
         self.engine = pyttsx3.init()
+        self.engine.setProperty('rate', 170)
         self.voices = self.engine.getProperty('voices')
 
         # Store all available voices with their IDs
@@ -36,9 +37,14 @@ class GUI:
 
         # Button to trigger text-to-speech
         self.button = tk.Button(self.root, text="CLICK ME!", font=('Arial', 16), command=self.button_click)
+        ''' command=self.button_click passes a reference to the button_click function to the command parameter. \
+            The function will only be executed when the button is clicked, not immediately when the line is processed.'''
+
         self.button.pack(padx=10, pady=10)
 
         self.root.mainloop()
+        '''Starts the main event loop of the GUI, allowing the window to stay open and respond to events like clicks.'''
+
 
     def button_click(self):
         text_to_say = self.textbox.get()
